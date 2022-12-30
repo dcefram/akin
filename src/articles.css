@@ -22,6 +22,10 @@ article {
   text-decoration: underline;
 }
 
+.title {
+  margin-bottom: 1rem;
+}
+
 .title,
 .title a {
   color: var(--primary-color);
@@ -70,7 +74,7 @@ article {
 }
 
 article + article {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .content h1,
@@ -130,4 +134,9 @@ article + article {
 
 .content #TableOfContents ul {
   margin-top: 0;
+}
+
+.content p.excerpt {
+  color: var(--excerpt-color);
+  font-style: italic;
 }
