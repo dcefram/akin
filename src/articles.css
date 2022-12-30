@@ -1,0 +1,125 @@
+article {
+  vertical-align: baseline;
+  background: 0 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: 400;
+}
+
+.subtitle {
+  color: var(--subtitle-color);
+  font-size: 18px;
+  line-height: 1.125;
+}
+
+.subtitle a {
+  text-decoration: none;
+}
+
+.subtitle a:hover {
+  text-decoration: underline;
+}
+
+.title,
+.title a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.title a:hover {
+  text-decoration: underline;
+}
+
+.subtitle,
+.title {
+  word-break: break-word;
+  font-weight: 300;
+}
+
+.subtitle.is-5 code,
+.subtitle.is-6,
+.subtitle.is-6 code {
+  font-size: 14px;
+}
+
+.subtitle em,
+.subtitle span,
+.title em,
+.title span {
+  font-weight: 300;
+}
+
+.is-pulled-right {
+  float: right;
+}
+
+.content {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.content h1:not(:first-child),
+.content h2:not(:first-child),
+.content h3:not(:first-child),
+.content h4:not(:first-child),
+.content h5:not(:first-child),
+.content h6:not(:first-child) {
+  margin-top: 3rem;
+}
+
+article + article {
+  margin-top: 5rem;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.content ol,
+.content ul {
+  margin-top: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.content ul ul {
+  margin-top: 0.5em;
+  list-style-type: circle;
+}
+
+.content ul ul ul {
+  list-style-type: square;
+}
+
+.content li + li {
+  margin-top: 0.25em;
+}
+
+.content blockquote:not(:last-child),
+.content ol:not(:last-child),
+.content p:not(:last-child),
+.content pre:not(:last-child),
+.content table:not(:last-child),
+.content ul:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.content pre {
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.content blockquote {
+  background-color: #f5f7fa;
+  border-left: 5px solid #d3d6db;
+  padding: 1.5em;
+}

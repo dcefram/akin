@@ -1,0 +1,13 @@
+{
+  "name": "halik",
+  "version": "1.0.0",
+  "description": "Hugo theme for rmrz.ph",
+  "scripts": {
+    "build": "parcel-css --minify --nesting --bundle --targets '>= 0.25%' src/main.css -o static/css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@parcel/css-cli": "^1.8.1"
+  }
+}

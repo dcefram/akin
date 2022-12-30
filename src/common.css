@@ -1,0 +1,116 @@
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color);
+  font-family: Raleway, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+em {
+  font-style: italic;
+}
+
+ul {
+  list-style: disc;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* classes from the original kiss theme*/
+.label,
+strong {
+  font-weight: 700;
+}
+
+.level-item {
+  stroke: currentColor;
+  fill: none;
+  position: relative;
+  top: 0.111111em;
+}
+
+.button {
+  color: #222324;
+  height: 32px;
+  text-align: center;
+  border: 1px solid #d3d6db;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+  line-height: 24px;
+  display: inline-flex;
+  position: relative;
+  user-select: none;
+  text-decoration: none;
+}
+
+.button.is-link {
+  color: #42464c;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+  text-decoration: underline;
+}
+
+.button.is-link:hover,
+.button.is-link:focus {
+  color: #222324;
+  background-color: #d3d6db;
+}
+
+.has-text-centered {
+  text-align: center;
+}
+
+.level {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.level.is-mobile {
+  display: flex;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.page-icon {
+  display: flex;
+}
+
+.page-icon .icon {
+  height: 16px;
+  width: 16px;
+}
+
+.button .icon:last-child,
+.button .tag:last-child {
+  margin-left: 4px;
+  margin-right: -2px;
+}
+
+.page-icon.left-icon .icon {
+  margin-left: -2px;
+  margin-right: 4px;
+}
+
+.image img {
+  height: auto;
+  width: 100%;
+  display: block;
+}

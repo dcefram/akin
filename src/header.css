@@ -1,0 +1,41 @@
+.nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-title h1 a {
+  color: #ff9900;
+  font-family: Baloo;
+  font-size: 64px;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.site-title h1 a:hover,
+.site-title h1 a:active {
+  text-decoration: none;
+  border-bottom: 0;
+}
+
+.site-title h4,
+.nav-item a {
+  color: #250054;
+  font-family: Baloo2;
+  font-size: 16px;
+}
+
+.site-title .title {
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.nav-item a {
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.nav-item a:hover {
+  color: #ff9900;
+}

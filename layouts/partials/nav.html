@@ -1,0 +1,20 @@
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="site-title">
+        <h1 class="title is-4"><a class="" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+        <h4>{{ .Site.Params.Info.description }}</h4>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          {{ $url := .RelPermalink }}<!---->
+          {{ with site.Menus.main }}
+            {{ range . }}
+            <a class="level-item{{ if eq .URL $url }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+          {{ end }}<!---->
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>

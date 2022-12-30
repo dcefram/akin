@@ -1,0 +1,23 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<section class="section">
+  <div class="container">
+    <div class="subtitle is-6 is-pulled-right">
+      {{ if .Params.tags }}
+      {{ partial "tags" .Params.tags }}
+      {{ end }}
+      {{ partial "reading-time" .ReadingTime }}
+    </div>
+    <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
+    <h1 class="title">{{ .Title }}</h1>
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+{{ if .Site.Params.Info.enableUtterances }}
+{{- partial "social/utterances" . -}}
+{{ end }}
+
+{{ partial "footer" . }}

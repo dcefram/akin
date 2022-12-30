@@ -1,0 +1,26 @@
+name = "Akin"
+license = "MIT"
+description = "Hugo theme for rmrz.ph"
+homepage = "https://rmrz.ph/"
+tags = [
+  "blog",
+  "minimal",
+  "minimalist",
+  "responsive"
+]
+features = [
+  "accessibility",
+  "analytics",
+  "comments",
+  "favicon",
+  "opengraph",
+  "pagination",
+  "shortcodes",
+  "single-column",
+  "syntax-highlighting",
+]
+min_version = 0.28
+
+[author]
+  name = "dcefram"
+  homepage = "https://rmrz.ph"
