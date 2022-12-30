@@ -2,7 +2,10 @@
 author = ""
 tags = []
 date = {{ .Date }}
-title = ""
+title = "{{ replace .Name "-" " " | title }}"
+description = ""
+slug = "{{ .Name }}"
 type = "post"
 draft = true
+toc = false
 +++
