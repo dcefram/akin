@@ -140,3 +140,18 @@ article + article {
   color: var(--excerpt-color);
   font-style: italic;
 }
+
+#shared-asset-title {
+  margin-bottom: 2em;
+}
+
+#shared-asset-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#shared-asset-container img,
+#shared-asset-container video {
+  max-width: 100%;
+}

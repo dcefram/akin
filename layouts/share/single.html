@@ -1,0 +1,46 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+
+<section class="section">
+  <div class="container">
+    <h3 id="shared-asset-title"></h3>
+    <div id="shared-asset-container"></div>
+  </div>
+</section>
+
+{{ partial "footer" . }}
+
+<script>
+  const params = new URLSearchParams(document.location.search);
+  const fileName = params.get('n');
+
+  if (fileName) {
+    const header = document.getElementById('shared-asset-title');
+    header.textContent = fileName;
+
+    const isVideo = /(\.mp4|\.webm|\.apng)$/ig.test(fileName);
+    const file = '{{ .Site.Params.Info.shareBaseUrl }}' + fileName;
+
+    // check if file exists
+    if (isVideo) {
+      const video = document.createElement('video');
+
+      video.addEventListener('error', () => { console.error('target asset does not exist :D') });
+      video.addEventListener('loadeddata', () => {
+        const container = document.getElementById('shared-asset-container');
+        container.appendChild(video);
+      });
+      video.setAttribute('src', file);
+      video.setAttribute('controls', 'true');
+    } else {
+      const img = document.createElement('img');
+
+      img.addEventListener('error', () => { console.error('target asset does not exist :D') });
+      img.addEventListener('load', () => {
+        const container = document.getElementById('shared-asset-container');
+        container.appendChild(img);
+      });
+      img.setAttribute('src', file);
+    }
+  }
+</script>
