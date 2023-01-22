@@ -8,7 +8,8 @@
     {{- else -}}
     {{ $pages = .Pages -}}
     {{- end -}}
-    {{ $paginator := .Paginate (where $pages "Type" "!=" "about") }}
+    {{ $invalidTypes := slice "about" "share" }}
+    {{ $paginator := .Paginate (where $pages "Type" "not in" $invalidTypes) }}
     {{ range sort $paginator.Pages }}
     <article>
       <div class="subtitle is-6 is-pulled-right">
