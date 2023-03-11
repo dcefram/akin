@@ -121,6 +121,14 @@ article + article {
   padding: 15px;
   margin-bottom: 15px;
   font-family: Courier, sans-serif;
+  overflow: auto;
+}
+
+.content :not(pre) > code {
+  color: #272822;
+  background-color: #f8f8f2;
+  padding: 0.15rem 0.25rem;
+  border: 1px solid #c4c4c4;
 }
 
 .content blockquote {
