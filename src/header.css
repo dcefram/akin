@@ -4,12 +4,18 @@
   justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+  }
+}
+
 .site-title h1 a {
-  color: #ff9900;
-  font-family: Baloo;
+  color: var(--bg-color-light);
+  font-family: 'Raleway';
   font-size: 64px;
-  line-height: 0;
   text-decoration: none;
+  text-shadow: -2px -2px 0 var(--primary-color), 2px -2px 0 var(--primary-color), -2px 2px 0 var(--primary-color), 2px 2px 0 var(--primary-color);
 }
 
 .site-title h1 a:hover,
@@ -18,11 +24,20 @@
   border-bottom: 0;
 }
 
-.site-title h4,
+.site-title h4 {
+  font-family: 'Raleway';
+  color: var(--brand-color);
+  background: var(--primary-color);
+  padding: 10px;
+  transform: rotate(-3deg);
+  margin-top: -18px;
+}
+
 .nav-item a {
-  color: #250054;
-  font-family: Baloo2;
+  color: var(--bg-color-light);
+  font-family: 'Raleway';
   font-size: 16px;
+  text-shadow: -1px -1px 0 var(--primary-color), 1px -1px 0 var(--primary-color), -1px 1px 0 var(--primary-color), 1px 1px 0 var(--primary-color);
 }
 
 .site-title .title {
@@ -37,5 +52,10 @@
 }
 
 .nav-item a:hover {
-  color: #ff9900;
+  text-shadow: -1px -1px 0 var(--brand-color), 1px -1px 0 var(--brand-color), -1px 1px 0 var(--brand-color), 1px 1px 0 var(--brand-color);
+}
+
+.nav-right {
+  align-self: flex-end;
+  margin-bottom: .8rem;
 }
