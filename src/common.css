@@ -110,7 +110,24 @@ strong {
 }
 
 .image img {
+  width: auto;
   height: auto;
-  width: 100%;
   display: block;
+  max-width: 100%;
+}
+
+.image.left img {
+  float: left;
+  margin-right: 1rem;
+}
+
+.image.right img {
+  float: right;
+  margin-left: 1rem;
+}
+
+.image.center-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

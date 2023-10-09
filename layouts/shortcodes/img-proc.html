@@ -1,0 +1,37 @@
+<!-- Copied from hugo's docs: https://gohugo.io/content-management/image-processing/ -->
+{{ $img := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ $numOfParams := len .Params }}
+{{ $command := .Get 1 }}
+{{ $options := .Get 2 }}
+{{ if ge $numOfParams 4 }}
+    {{ $.Scratch.Set "type"  (.Get 3) }}
+{{ else }}
+    {{ $.Scratch.Set "type" "center" }}
+{{ end }}
+{{ $type := $.Scratch.Get "type" }}
+
+{{ if eq $command "Fit"}}
+  {{ $img = $img.Fit $options }}
+{{ else if eq $command "Resize"}}
+  {{ $img = $img.Resize $options }}
+{{ else if eq $command "Fill"}}
+  {{ $img = $img.Fill $options }}
+{{ else if eq $command "Crop"}}
+  {{ $img = $img.Crop $options }}
+{{ else }}
+  {{ errorf "Invalid image processing command: Must be one of Crop, Fit, Fill or Resize."}}
+{{ end }}
+
+{{ if eq $type "left" }}
+<span class="image left">
+    <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+</span>
+{{ else if eq $type "right" }}
+<span class="image right">
+    <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+</span>
+{{ else }}
+<p><span class="image center-image">
+    <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+</span></p>
+{{ end }}
