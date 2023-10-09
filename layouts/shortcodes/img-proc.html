@@ -22,6 +22,10 @@
   {{ errorf "Invalid image processing command: Must be one of Crop, Fit, Fill or Resize."}}
 {{ end }}
 
+{{ if ge $numOfParams 5 }}
+  {{ $img = $img.Process (.Get 4) }}
+{{ end }}
+
 {{ if eq $type "left" }}
 <span class="image left">
     <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
