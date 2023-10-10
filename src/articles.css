@@ -164,3 +164,9 @@ article + article {
 #shared-asset-container video {
   max-width: 100%;
 }
+
+.related-contents ul {
+  list-style-type: none;
+  margin: 0;
+  font-size: 0.8em;
+}
