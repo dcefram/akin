@@ -8,7 +8,7 @@
     {{- else -}}
     {{ $pages = .Pages -}}
     {{- end -}}
-    {{ $invalidTypes := slice "about" "share" }}
+    {{ $invalidTypes := slice "about" "share" "notes" }}
     {{ $paginator := .Paginate (where $pages "Type" "not in" $invalidTypes) }}
     {{ range sort $paginator.Pages }}
     <article>

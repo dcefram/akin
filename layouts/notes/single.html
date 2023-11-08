@@ -1,0 +1,55 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
+    <h1 class="title">{{ .Title }}</h1>
+    <div class="content">
+      {{ if .Params.link }}
+        <blockquote>
+          Source: <a href="{{ .Params.link }}">{{ .Title }}</a>
+        </blockquote>
+      {{ end }}
+      {{ partial "toc" . }}
+      {{ .Content }}
+
+      {{ $related := .Site.RegularPages.Related . | first 3 }}
+      {{ with $related }}
+        <div class="related-contents">
+          <h4>See Also</h4>
+          <ul>
+            {{ range $i, $p := . }}
+              <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ with .HeadingsFiltered }}
+                  <ul>
+                    {{ range . }}
+                      {{ $link := printf "%s#%s" $p.RelPermalink .ID | safeURL }}
+                      <li>
+                        <a href="{{ $link }}">{{ .Title }}</a>
+                      </li>
+                    {{ end }}
+                  </ul>
+                {{ end }}
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ if .Site.Params.Info.enableUtterances }}
+{{- partial "social/utterances" . -}}
+{{ end }}
+
+{{ if .Page.Store.Get "hasMermaid" }}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+{{ end }}
+
+{{ partial "footer" . }}

@@ -145,9 +145,11 @@ article + article {
   margin-top: 0;
 }
 
-.content p.excerpt {
+p.excerpt {
   color: var(--excerpt-color);
   font-style: italic;
+  margin-bottom: 2em;
+  line-height: 1.5em;
 }
 
 #shared-asset-title {
@@ -169,4 +171,10 @@ article + article {
   list-style-type: none;
   margin: 0;
   font-size: 0.8em;
+}
+
+.notes article {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
