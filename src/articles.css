@@ -178,3 +178,8 @@ p.excerpt {
   align-items: center;
   gap: 1em;
 }
+
+.notes .subtitle {
+  font-size: 12px;
+  word-break: normal;
+}
