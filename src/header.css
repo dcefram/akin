@@ -7,6 +7,12 @@
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
+    justify-content: center;
+  }
+
+  .nav .nav-right {
+    align-self: center;
+    margin: .8rem 0;
   }
 }
 
