@@ -1,6 +1,7 @@
 {{ partial "header" . }}
 {{ partial "nav" . }}
-
+{{ $date := .Date.Format "02.01.2006" }}
+{{ $lastmod := .Lastmod.Format "02.01.2006" }}
 <section class="section">
   <div class="container">
     <div class="subtitle is-6 is-pulled-right">
@@ -9,7 +10,11 @@
       {{ end }}
       {{ partial "reading-time" .ReadingTime }}
     </div>
-    <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
+    {{ if ne $lastmod $date }}
+      <h2 class="subtitle is-6" title="Originally published at {{ .Date.Format "January 2, 2006" }}">Last Updated at {{ .Lastmod.Format "January 2, 2006" }}</h2>
+    {{ else }}
+      <h2 class="subtitle is-6">Published at {{ .Date.Format "January 2, 2006" }}</h2>
+    {{ end}}
     <h1 class="title">{{ .Title }}</h1>
     <div class="content">
       {{ if .Params.description }}

@@ -8,9 +8,12 @@
     {{- else -}}
     {{ $pages = .Pages -}}
     {{- end -}}
+    {{ $pages = sort $pages.ByLastmod.Reverse }}
     {{ $invalidTypes := slice "about" "share" "notes" }}
     {{ $paginator := .Paginate (where $pages "Type" "not in" $invalidTypes) }}
-    {{ range sort $paginator.Pages }}
+    {{ range $paginator.Pages }}
+    {{ $date := .Date.Format "02.01.2006" }}
+    {{ $lastmod := .Lastmod.Format "02.01.2006" }}
     <article>
       <div class="subtitle is-6 is-pulled-right">
         {{ if .Params.tags }}
@@ -18,7 +21,11 @@
         {{ end }}
         {{ partial "reading-time" .ReadingTime }}
       </div>
-      <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
+      {{ if ne $lastmod $date }}
+        <h2 class="subtitle is-6">Last Updated at {{ .Lastmod.Format "January 2, 2006" }}</h2>
+      {{ else }}
+        <h2 class="subtitle is-6">Published at {{ .Date.Format "January 2, 2006" }}</h2>
+      {{ end}}
       <h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h1>
       <div class="content">
         {{ if .Params.description }}
