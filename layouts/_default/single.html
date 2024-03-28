@@ -11,9 +11,9 @@
       {{ partial "reading-time" .ReadingTime }}
     </div>
     {{ if ne $lastmod $date }}
-      <h2 class="subtitle is-6" title="Originally published at {{ .Date.Format "January 2, 2006" }}">Last Updated at {{ .Lastmod.Format "January 2, 2006" }}</h2>
+      <h2 class="subtitle is-6" title="Originally published at {{ .Date.Format "January 2, 2006" }}">Updated at {{ .Lastmod.Format "January 2, 2006" }}</h2>
     {{ else }}
-      <h2 class="subtitle is-6">Published at {{ .Date.Format "January 2, 2006" }}</h2>
+      <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
     {{ end}}
     <h1 class="title">{{ .Title }}</h1>
     <div class="content">

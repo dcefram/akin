@@ -22,9 +22,9 @@
         {{ partial "reading-time" .ReadingTime }}
       </div>
       {{ if ne $lastmod $date }}
-        <h2 class="subtitle is-6">Last Updated at {{ .Lastmod.Format "January 2, 2006" }}</h2>
+        <h2 class="subtitle is-6">{{ .Lastmod.Format "January 2, 2006" }}</h2>
       {{ else }}
-        <h2 class="subtitle is-6">Published at {{ .Date.Format "January 2, 2006" }}</h2>
+        <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
       {{ end}}
       <h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h1>
       <div class="content">
