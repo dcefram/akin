@@ -183,3 +183,8 @@ p.excerpt {
   font-size: 12px;
   word-break: normal;
 }
+
+figure figcaption {
+  font-size: 0.8em;
+  color: var(--excerpt-color);
+}

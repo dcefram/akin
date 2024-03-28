@@ -3,12 +3,18 @@
 {{ $numOfParams := len .Params }}
 {{ $command := .Get 1 }}
 {{ $options := .Get 2 }}
+
 {{ if ge $numOfParams 4 }}
     {{ $.Scratch.Set "type"  (.Get 3) }}
 {{ else }}
     {{ $.Scratch.Set "type" "center" }}
 {{ end }}
 {{ $type := $.Scratch.Get "type" }}
+
+{{ if ge $numOfParams 5 }}
+  {{ $.Scratch.Set "figcaption" (.Get 4) }}
+{{ end }}
+{{ $figcaption  := $.Scratch.Get "figcaption" }}
 
 {{ if eq $command "Fit"}}
   {{ $img = $img.Fit $options }}
@@ -22,20 +28,41 @@
   {{ errorf "Invalid image processing command: Must be one of Crop, Fit, Fill or Resize."}}
 {{ end }}
 
-{{ if ge $numOfParams 5 }}
-  {{ $img = $img.Process (.Get 4) }}
+{{ if ge $numOfParams 6 }}
+  {{ $img = $img.Process (.Get 5) }}
 {{ end }}
 
 {{ if eq $type "left" }}
 <span class="image left">
+  {{ if $figcaption }}
+      <figure>
+        <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+          <figcaption>{{ $figcaption }}</figcaption>
+      </figure>
+  {{ else }}
     <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+  {{ end }}    
 </span>
 {{ else if eq $type "right" }}
 <span class="image right">
+  {{ if $figcaption }}
+      <figure>
+        <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+          <figcaption>{{ $figcaption }}</figcaption>
+      </figure>
+  {{ else }}
     <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+  {{ end }}    
 </span>
 {{ else }}
 <p><span class="image center-image">
+  {{ if $figcaption }}
+      <figure>
+        <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+          <figcaption>{{ $figcaption }}</figcaption>
+      </figure>
+  {{ else }}
     <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+  {{ end }}    
 </span></p>
 {{ end }}
