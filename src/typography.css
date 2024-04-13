@@ -31,6 +31,10 @@ a {
   transition: all 0.3s ease;
 }
 
+a:hover {
+  color: var(--brand-color);
+}
+
 body, .p {
   font-size: 1rem;
 }

@@ -1,0 +1,82 @@
+.home-intro {
+  padding-top: 16px;
+}
+
+.home-intro h1 {
+  color: var(--primary-color);
+  font-size: 36px;
+  position: relative;
+  margin: 0;
+  line-height: normal;
+}
+
+.home-intro h1::before {
+  content: "Hi, I'm";
+  color: var(--primary-color);
+  font-size: 14px;
+  transform: rotate(-25deg);
+  translate: -50% -90%;
+  position: absolute;
+}
+
+.home-intro p {
+  color: var(--tertiary-color);
+  font-size: 20px;
+  font-style: italic;
+  margin-left: 32px;
+  line-height: normal;
+}
+
+.home-about {
+  padding-top: 50px;
+}
+
+.home-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+@media (min-width: 768px) {
+  .home-links {
+    flex-direction: row;
+  }
+}
+
+.home-card {
+  background: transparent;
+  border: 1px solid var(--bg-color-dark);
+  border-radius: 15px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-family: 'Raleway';
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.home-card:hover {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--brand-color);
+}
+
+.home-card.p-lg {
+  padding: 30px;
+}
+
+.home-card.p-md {
+  padding: 25px;
+}
+
+.home-card p {
+  font-size: 24px;
+}
+
+.home-card p.s1 {
+  font-size: .875rem;
+}
+
+.home-icon-lg {
+  height: 80px;
+  width: 80px;
+}
