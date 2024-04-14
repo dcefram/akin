@@ -58,6 +58,7 @@
 .home-card:hover {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: 1px solid var(--brand-color);
+  color: var(--brand-color);
 }
 
 .home-card.p-lg {
