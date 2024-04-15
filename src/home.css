@@ -15,7 +15,7 @@
   color: var(--primary-color);
   font-size: 14px;
   transform: rotate(-25deg);
-  translate: -50% -90%;
+  translate: -30% -90%;
   position: absolute;
 }
 
