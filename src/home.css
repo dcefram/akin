@@ -53,6 +53,7 @@
   font-family: 'Raleway';
   flex: 1;
   transition: all 0.3s ease;
+  color: var(--primary-color);
 }
 
 .home-card:hover {
