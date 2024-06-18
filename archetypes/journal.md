@@ -5,7 +5,7 @@ date = {{ .Date }}
 title = "{{ replace .Name "-" " " | title }}"
 description = ""
 slug = "{{ .Name }}"
-type = "post"
+type = "journal"
 draft = true
 toc = false
 +++
