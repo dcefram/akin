@@ -1,36 +1,81 @@
-{{ partial "header" . }}
-{{ partial "nav" . }}
+{{ partial "header" . }} {{ partial "nav" . }}
 <section class="section">
   <div class="container">
     <div class="content">
       <div class="home-intro">
         <h1>Daniel Cefram Ramirez</h1>
-        <p>I am a product-centric software engineer, helping companies build their products.</p>
+        <p>
+          I am a product-centric software engineer, helping companies turn their
+          visions into reality.
+        </p>
       </div>
       <div class="home-about">
         <p>
-          I have over 13 years of experience in software engineering and leading teams, initially starting
-          in the embedded engineering field with
-          <a href="https://www.denso-ten.com/" target="_blank" rel="noopener noreferrer">Denso Ten</a>,
-          then moving on to multimedia streaming software development with
-          <a href="https://xsplit.com/" target="_blank" rel="noopener noreferrer">XSplit</a>,
-          joined a couple of startups like <a href="https://www.linkedin.com/company/dealtale/" target="_blank" rel="noopener noreferrer">Dealtale</a>
-          by <a href="https://vian.ai/" target="_blank" rel="noopener noreferrer">Vianai</a>,
-          and now leading a product engineering team for a supply chain management SaaS platform called
-          <a href="https://www.inspectorio.com/" target="_blank" rel="noopener noreferrer">Inspectorio</a>.
+          I have over 13 years of experience in software engineering and leading
+          teams, initially starting in the embedded engineering field with
+          <a
+            href="https://www.denso-ten.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Denso Ten</a
+          >, then moving on to multimedia streaming software development with
+          <a
+            href="https://xsplit.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >XSplit</a
+          >, joined a couple of startups like
+          <a
+            href="https://www.linkedin.com/company/dealtale/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Dealtale</a
+          >
+          by
+          <a href="https://vian.ai/" target="_blank" rel="noopener noreferrer"
+            >Vianai</a
+          >, and now leading a product engineering team for a supply chain
+          management SaaS platform called
+          <a
+            href="https://www.inspectorio.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Inspectorio</a
+          >.
         </p>
         <p>
-          This website is where I share my thoughts. I took inspiration from <a href="https://maggieappleton.com/" target="_blank" rel="noopener noreferrer">Maggie’s digital garden</a>
-          after stumbling upon it when I was trying to figure out how to <em>properly</em> use <a href="https://roamresearch.com/" target="_blank" rel="noopener noreferrer">Roam</a>.
+          This website is where I share my thoughts. I took inspiration from
+          <a
+            href="https://maggieappleton.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Maggie’s digital garden</a
+          >
+          after stumbling upon it when I was trying to figure out how to
+          <em>properly</em> use
+          <a
+            href="https://roamresearch.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Roam</a
+          >.
         </p>
       </div>
       <div class="home-links">
         <button data-link="/thoughts/" type="button" class="home-card p-lg">
-          <img class="home-icon-lg" src="{{ .Site.BaseURL }}/images/garden.svg" alt="The Garden of Thoughts" />
+          <img
+            class="home-icon-lg"
+            src="{{ .Site.BaseURL }}/images/garden.svg"
+            alt="The Garden of Thoughts"
+          />
           <p>The Garden of Thoughts</p>
         </button>
         <button data-link="/journal/" type="button" class="home-card p-lg">
-          <img class="home-icon-lg" src="{{ .Site.BaseURL }}/images/journal.svg" alt="Public Journal" />
+          <img
+            class="home-icon-lg"
+            src="{{ .Site.BaseURL }}/images/journal.svg"
+            alt="Public Journal"
+          />
           <p>Public Journal</p>
         </button>
       </div>
@@ -39,10 +84,11 @@
 </section>
 
 <script>
-  document.querySelectorAll('.home-card').forEach((card) => {
-    card.addEventListener('click', () => {
-      window.location.href = card.getAttribute('data-link');
+  document.querySelectorAll(".home-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      window.location.href = card.getAttribute("data-link");
     });
   });
 </script>
 {{ partial "footer" . }}
+
