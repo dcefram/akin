@@ -55,7 +55,7 @@
   {{ end }}    
 </span>
 {{ else }}
-<p><span class="image center-image">
+<p><div class="image center-image">
   {{ if $figcaption }}
       <figure>
         <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
@@ -64,5 +64,5 @@
   {{ else }}
     <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
   {{ end }}    
-</span></p>
+</div></p>
 {{ end }}
