@@ -1,8 +1,32 @@
-<script src="https://utteranc.es/client.js"
-        repo="{{- .Site.Params.Utterances.repo -}}"
-        issue-term="{{- .Site.Params.Utterances.issueTerm -}}"
-        {{- if .Site.Params.utterances.label -}}label="{{- .Site.Params.Utterances.label -}}"{{- end -}}
-        theme="{{- .Site.Params.Utterances.theme -}}"
-        crossorigin="anonymous"
-        async>
+{{- $fallback := default "github-light" .Site.Params.Utterances.theme -}}
+{{- $light := default $fallback .Site.Params.Utterances.themeLight -}}
+{{- $dark := default $fallback .Site.Params.Utterances.themeDark -}}
+<script>
+  (function () {
+    var anchor = document.currentScript;
+    var query = window.matchMedia("(prefers-color-scheme: dark)");
+    var light = {{ $light }};
+    var dark = {{ $dark }};
+
+    var script = document.createElement("script");
+    script.src = "https://utteranc.es/client.js";
+    script.setAttribute("repo", {{ .Site.Params.Utterances.repo }});
+    script.setAttribute("issue-term", {{ .Site.Params.Utterances.issueTerm }});
+    {{- with .Site.Params.Utterances.label }}
+    script.setAttribute("label", {{ . }});
+    {{- end }}
+    script.setAttribute("theme", query.matches ? dark : light);
+    script.crossOrigin = "anonymous";
+    script.async = true;
+    anchor.parentNode.insertBefore(script, anchor);
+
+    query.addEventListener("change", function (event) {
+      var frame = document.querySelector("iframe.utterances-frame");
+      if (!frame) return;
+      frame.contentWindow.postMessage(
+        { type: "set-theme", theme: event.matches ? dark : light },
+        "https://utteranc.es"
+      );
+    });
+  })();
 </script>

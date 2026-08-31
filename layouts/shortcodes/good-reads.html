@@ -2,11 +2,11 @@
 <style type="text/css" media="screen">
   .gr_custom_container_1680829540 {
     /* customize your Goodreads widget container here*/
-    border: 1px solid gray;
+    border: 1px solid var(--widget-border);
     border-radius: 10px;
     padding: 10px 5px 10px 5px;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--widget-bg);
+    color: var(--widget-fg);
     width: 300px;
   }
   .gr_custom_container_1680829540 br {
@@ -14,7 +14,7 @@
   }
   .gr_custom_header_1680829540 {
     /* customize your Goodreads header here*/
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid var(--widget-border);
     width: 100%;
     margin-bottom: 5px;
     text-align: center;
@@ -27,7 +27,7 @@
     margin-bottom: 20px;
     overflow: auto;
     padding-bottom: 4px;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid var(--widget-border);
   }
   .gr_custom_book_container_1680829540 {
     /* customize your book covers here */
@@ -57,6 +57,9 @@
     font-size: 0.75em;
     text-decoration: none;
     line-height: 18px;
+  }
+  .gr_custom_container_1680829540 a {
+    color: var(--link-color);
   }
 </style>
 
@@ -96,7 +99,7 @@
   </div>
 </div>
 <script
-  src="https://www.goodreads.com/review/custom_widget/{{ .Get "user" }}.Currently%20Reading?cover_position=left&cover_size=small&num_books=5&order=a&shelf=currently-reading&show_author=1&show_cover=1&show_rating=1&show_review=1&show_tags=1&show_title=1&sort=date_added&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=1680829540&widget_text_color=000000&widget_title_size=medium&widget_width=medium"
+  src="https://www.goodreads.com/review/custom_widget/{{ .Get "user" }}.Currently%20Reading?cover_position=left&cover_size=small&num_books=5&order=a&shelf=currently-reading&show_author=1&show_cover=1&show_rating=1&show_review=1&show_tags=1&show_title=1&sort=date_added&widget_bg_transparent=1&widget_border_width=1&widget_id=1680829540&widget_title_size=medium&widget_width=medium"
   type="text/javascript"
   charset="utf-8"
 ></script>

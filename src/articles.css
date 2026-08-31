@@ -28,7 +28,7 @@ article {
 
 .title,
 .title a {
-  color: var(--primary-color);
+  color: var(--heading-color);
   text-decoration: none;
 }
 
@@ -125,15 +125,15 @@ article + article {
 }
 
 .content :not(pre) > code {
-  color: #272822;
-  background-color: #f8f8f2;
+  color: var(--code-inline-fg);
+  background-color: var(--code-inline-bg);
   padding: 0.15rem 0.25rem;
-  border: 1px solid #c4c4c4;
+  border: 1px solid var(--code-inline-border);
 }
 
 .content blockquote {
-  background-color: #f5f7fa;
-  border-left: 5px solid #d3d6db;
+  background-color: var(--quote-bg);
+  border-left: 5px solid var(--quote-border);
   padding: 1.5em;
 }
 

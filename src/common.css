@@ -1,5 +1,5 @@
 body {
-  background-color: var(--bg-color-light);
+  background-color: var(--page-bg);
   color: var(--text-color);
   font-family: Raleway, sans-serif;
 }
@@ -39,10 +39,10 @@ strong {
 }
 
 .button {
-  color: #222324;
+  color: var(--button-fg);
   height: 32px;
   text-align: center;
-  border: 1px solid #d3d6db;
+  border: 1px solid var(--button-border);
   border-radius: 3px;
   justify-content: center;
   align-items: center;
@@ -57,7 +57,7 @@ strong {
 }
 
 .button.is-link {
-  color: #42464c;
+  color: var(--button-link-fg);
   background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
   text-decoration: underline;
@@ -65,8 +65,8 @@ strong {
 
 .button.is-link:hover,
 .button.is-link:focus {
-  color: #222324;
-  background-color: #d3d6db;
+  color: var(--button-link-hover-fg);
+  background-color: var(--button-link-hover-bg);
 }
 
 .has-text-centered {

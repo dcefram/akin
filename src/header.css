@@ -17,11 +17,11 @@
 }
 
 .site-title h1 a {
-  color: var(--bg-color-light);
+  color: var(--title-fill);
   font-family: 'Raleway';
   font-size: 64px;
   text-decoration: none;
-  text-shadow: -2px -2px 0 var(--primary-color), 2px -2px 0 var(--primary-color), -2px 2px 0 var(--primary-color), 2px 2px 0 var(--primary-color);
+  text-shadow: -2px -2px 0 var(--title-outline), 2px -2px 0 var(--title-outline), -2px 2px 0 var(--title-outline), 2px 2px 0 var(--title-outline);
 }
 
 .site-title h1 a:hover,
@@ -33,14 +33,14 @@
 .site-title h4 {
   font-family: 'Raleway';
   color: var(--brand-color);
-  background: var(--primary-color);
+  background: var(--badge-bg);
   padding: 10px;
   transform: rotate(-3deg);
   margin-top: -18px;
 }
 
 .nav-item a {
-  color: black;
+  color: var(--nav-link-color);
   font-family: 'Raleway';
   font-size: 14px;
 }

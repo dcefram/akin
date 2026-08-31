@@ -1,0 +1,30 @@
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  (function () {
+    var query = window.matchMedia("(prefers-color-scheme: dark)");
+    var nodes = Array.prototype.slice.call(
+      document.querySelectorAll("div.mermaid")
+    );
+
+    // mermaid replaces each node's content with the rendered SVG, so keep the
+    // source around to redraw when the system theme flips.
+    nodes.forEach(function (node) {
+      node.dataset.source = node.textContent;
+    });
+
+    function render() {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: query.matches ? "dark" : "default",
+      });
+      nodes.forEach(function (node) {
+        node.removeAttribute("data-processed");
+        node.textContent = node.dataset.source;
+      });
+      mermaid.run({ nodes: nodes });
+    }
+
+    render();
+    query.addEventListener("change", render);
+  })();
+</script>
