@@ -13,8 +13,13 @@
     {{ range sort $paginator.Pages }}
     <article>
       <div class="subtitle is-6 is-pulled-right">
-        {{ if .Params.tags }}
-        {{ partial "tags" .Params.tags }}
+        {{/* The journal tag is noise on tag pages, so leave it out. */}}
+        {{ $tags := slice }}
+        {{ range .Params.tags }}
+          {{ if ne (lower .) "journal" }}{{ $tags = $tags | append . }}{{ end }}
+        {{ end }}
+        {{ if $tags }}
+        {{ partial "tags" $tags }}
         {{ end }}
         {{ partial "reading-time" .ReadingTime }}
       </div>

@@ -17,7 +17,14 @@
     <article>
       <div class="subtitle is-6 is-pulled-right">
         {{ if .Params.tags }}
-        {{ partial "tags" .Params.tags }}
+        {{/* Journal entries show only their journal tag, nothing else. */}}
+        {{ $tags := .Params.tags }}
+        {{ $journalTag := "" }}
+        {{ range .Params.tags }}
+          {{ if eq (lower .) "journal" }}{{ $journalTag = . }}{{ end }}
+        {{ end }}
+        {{ if $journalTag }}{{ $tags = slice $journalTag }}{{ end }}
+        {{ partial "tags" $tags }}
         {{ end }}
         {{ partial "reading-time" .ReadingTime }}
       </div>
