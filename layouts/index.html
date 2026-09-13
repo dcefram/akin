@@ -51,7 +51,8 @@
           >.
         </p>
         <p>
-          This website is where I share my thoughts. I took inspiration from
+          This website is where I share my thoughts. I originally took
+          inspiration from
           <a
             href="https://maggieappleton.com/"
             target="_blank"
@@ -65,32 +66,12 @@
             target="_blank"
             rel="noopener noreferrer"
             >Roam</a
-          >.
+          >, but has since reverted back to a normal-ish blog. I find some value
+          on preserving how my thoughts progress overtime.
         </p>
-      </div>
-      <div class="home-links">
-        <button data-link="/thoughts/" type="button" class="home-card p-lg">
-          <img
-            class="home-icon-lg"
-            src="/images/garden.svg"
-            alt="The Garden of Thoughts"
-          />
-          <p>The Garden of Thoughts</p>
-        </button>
-        <button data-link="/tags/journal/" type="button" class="home-card p-lg">
-          {{ partial "svg/journal" . }}
-          <p>Public Journal</p>
-        </button>
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  document.querySelectorAll(".home-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      window.location.href = card.getAttribute("data-link");
-    });
-  });
-</script>
 {{ partial "footer" . }}
